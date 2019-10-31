@@ -23,12 +23,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
 
     def nav_version = "2.1.0"
     def dagger = "2.24"
+    def retrofit_version = "2.6.0"
+    def converter_moshi = "2.4.0"
+    def rxjava = "2.2.9"
+    def rxAndroid = "2.1.1"
+    def lifecycle_version = "2.1.0"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -50,6 +58,18 @@ dependencies {
 //    // https://mvnrepository.com/artifact/com.google.dagger/dagger-android-processor
 //    compile group: 'com.google.dagger', name: 'dagger-android-processor', version: '2.24'
 
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$converter_moshi"
+
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava"
+
+    //LifeCycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

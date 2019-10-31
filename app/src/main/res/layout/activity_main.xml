@@ -10,7 +10,8 @@
         android:id="@+id/edt_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter API KEY" />
+        android:hint="Enter API KEY"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btn_api"

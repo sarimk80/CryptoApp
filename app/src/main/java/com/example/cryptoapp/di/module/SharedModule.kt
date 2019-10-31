@@ -1,4 +1,4 @@
-package com.example.cryptoapp.di
+package com.example.cryptoapp.di.module
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
