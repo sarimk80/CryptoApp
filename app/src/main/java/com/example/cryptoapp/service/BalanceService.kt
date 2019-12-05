@@ -16,4 +16,8 @@ interface BalanceService {
         @Field("amounts") amounts: String,
         @Field("to_addresses") to_addresses: String
     ): Single<Balance>
+
+
+    @GET("get_transactions/")
+    fun getTransaction(@Query("api_key") api_key: String, @Query("type") type: String): Single<Balance>
 }

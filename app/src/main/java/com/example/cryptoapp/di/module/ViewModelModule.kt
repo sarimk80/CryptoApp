@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.cryptoapp.di.ViewModelKey
 import com.example.cryptoapp.viewmodels.AccountViewModel
 import com.example.cryptoapp.viewmodels.HomeViewModel
+import com.example.cryptoapp.viewmodels.TransactionViewModel
 import com.example.cryptoapp.viewmodels.ViewModelFactory
 import dagger.Binds
 import dagger.Module
@@ -22,6 +23,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(AccountViewModel::class)
     abstract fun bindAccountViewModule(accountViewModel: AccountViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(TransactionViewModel::class)
+    abstract fun bindTransactionViewModel(transactionViewModel: TransactionViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(viewModelFactory: ViewModelFactory): ViewModelProvider.Factory

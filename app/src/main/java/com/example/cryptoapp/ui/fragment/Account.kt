@@ -17,6 +17,7 @@ import com.example.cryptoapp.R
 import com.example.cryptoapp.databinding.FragmentAccountBinding
 import com.example.cryptoapp.viewmodels.AccountViewModel
 import com.example.cryptoapp.viewmodels.ViewModelFactory
+import com.google.android.material.snackbar.Snackbar
 import javax.inject.Inject
 
 /**
@@ -70,10 +71,22 @@ class Account : Fragment() {
             }
         })
 
-        //Error 404 because there is no coin in the account
-        accountViewModel.getWithDrawCoinRepoLiveData(apiKey, "100", "3D98HvyfAdPa2FsoeXpukHN8TvdFW5VtjZ").observe(this,
-            Observer { data ->
-                Log.e("Account", data.status)
-            })
+        fragmentAccountBinding.btnSent.setOnClickListener {
+            if (fragmentAccountBinding.edtAddress.text.isEmpty() && fragmentAccountBinding.edtAddress.text.isEmpty()) {
+                Snackbar.make(it, "Enter Address or Amount", Snackbar.LENGTH_LONG).show()
+            } else {
+                //Error 404 because there is no coin in the account
+                accountViewModel.getWithDrawCoinRepoLiveData(
+                    apiKey,
+                    fragmentAccountBinding.edtAmount.text.toString(),
+                    fragmentAccountBinding.edtAddress.text.toString()
+                ).observe(this,
+                    Observer { data ->
+                        Log.e("Account", data.status)
+                    })
+            }
+        }
+
+
     }
 }
