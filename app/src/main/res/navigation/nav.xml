@@ -37,5 +37,13 @@
         <action
             android:id="@+id/action_balance_to_account"
             app:destination="@id/account" />
+        <action
+            android:id="@+id/action_balance_to_stock"
+            app:destination="@id/stock" />
     </fragment>
+    <fragment
+        android:id="@+id/stock"
+        android:name="com.example.cryptoapp.ui.fragment.Stock"
+        android:label="fragment_stock"
+        tools:layout="@layout/fragment_stock" />
 </navigation>

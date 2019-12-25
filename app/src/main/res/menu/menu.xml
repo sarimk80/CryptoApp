@@ -17,5 +17,11 @@
         android:icon="@drawable/ic_person_black_24dp"
         />
 
+    <item
+        android:id="@+id/stock"
+        android:title="Stock"
+        android:icon="@drawable/ic_call_made_black_24dp"
+        />
+
 
 </menu>
